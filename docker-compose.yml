@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  host:
+    build:
+      context: ./host
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    restart: always
+
+  microfrontend:
+    build:
+      context: ./home
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    command: ["yarn", "preview"]
+    restart: always
