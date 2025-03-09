@@ -1,6 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
+import dotenv from 'dotenv'
+
+const dotenvConfig = dotenv.config();
+const prodUrl = dotenvConfig.parsed?.VITE_API_URL ?? ''
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -32,7 +37,7 @@ export default defineConfig({
         }
     ],
     server: {
-        host: "0.0.0.0",
+        host: "127.0.0.1",
         port: 3001,
         strictPort: true,
     },
@@ -41,7 +46,7 @@ export default defineConfig({
         port: 3001,
         strictPort: true,
         cors: {
-            origin: ['http://147.45.70.66:3000']
+            origin: [`${prodUrl}:3000`]
         }
     },
 
