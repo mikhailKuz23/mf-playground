@@ -11,7 +11,7 @@ const remotes = [
   {
     name: "home",
     entry: isHomeOverride
-      ? `http://127.0.0.1${bundlePath}`
+      ? `https://127.0.0.1${bundlePath}`
       : `${prodUrl}${bundlePath}`,
     type: "module",
   },

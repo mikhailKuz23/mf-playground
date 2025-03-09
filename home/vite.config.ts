@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
 import dotenv from 'dotenv'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 
 const dotenvConfig = dotenv.config();
 const prodUrl = dotenvConfig.parsed?.VITE_API_URL ?? ''
@@ -11,6 +12,7 @@ const prodUrl = dotenvConfig.parsed?.VITE_API_URL ?? ''
 export default defineConfig({
     plugins: [
         react(),
+        basicSsl(),
         federation({
             name: "home",
             filename: "remoteEntry.js",
@@ -46,8 +48,8 @@ export default defineConfig({
         port: 3001,
         strictPort: true,
         cors: {
-            origin: [`${prodUrl}:3000`]
-        }
+            origin: [`${prodUrl}:3000`],
+        },
     },
 
     build: {
