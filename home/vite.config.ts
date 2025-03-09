@@ -36,6 +36,15 @@ export default defineConfig({
         port: 3001,
         strictPort: true,
     },
+    preview: {
+        host: '127.0.0.1',
+        port: 3001,
+        strictPort: true,
+        cors: {
+            origin: ['http://147.45.70.66:3000']
+        }
+    },
+
     build: {
         rollupOptions: {
             // Меняем входную точку с html файла на ts

@@ -10,7 +10,7 @@ const remotes = [
   {
     name: "home",
     entry: isHomeOverride
-      ? "http://localhost:3001/assets/remoteEntry.js"
+      ? "http://127.0.0.1:3001/assets/remoteEntry.js"
       : prodUrl,
     type: "module",
   },
