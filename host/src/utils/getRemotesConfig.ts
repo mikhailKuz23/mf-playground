@@ -1,4 +1,3 @@
-
 export const getRemotesConfig = async () => {
     const homeOverridePath = localStorage.getItem("home-override-path");
     const prodUrl = import.meta.env.VITE_API_URL;
