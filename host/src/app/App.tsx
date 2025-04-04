@@ -8,7 +8,6 @@ import {
 import { routes } from "./routes";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { ErrorFallback } from "./ErrorFallback";
 
 const App = () => {
   return (
@@ -33,7 +32,12 @@ const ApplicationRoutes = () => {
           path={route.path}
           element={
             <ErrorBoundary
-              FallbackComponent={ErrorFallback}
+              FallbackComponent={() => (
+                <div>
+                  <h2>Что-то пошло не так при загрузке микрофронтенда.</h2>
+                  <p>Попробуйте обновить страницу.</p>
+                </div>
+              )}
               /** для сброса стейта ошибки при переходе на другие страницы через навигацию */
               key={location.pathname}
             >
