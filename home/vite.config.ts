@@ -13,7 +13,7 @@ export default defineConfig({
             exposes: {
                 "./Home": "./src/app/App"
             },
-            shared: ["react", "react-dom"],
+            shared: ["react", "react-dom", "react-router-dom"],
         }),
     ],
     server: {
@@ -22,6 +22,7 @@ export default defineConfig({
         strictPort: true,
     },
     build: {
+        target: 'esnext',
         rollupOptions: {
             // Меняем входную точку с html файла на ts
             input: "./src/index.ts"

@@ -5,7 +5,7 @@ import { getRemoteModule } from "../utils/getRemoteModule";
 export const routes: RouteProps[] = [
   { path: "/", element: <>Host Application</> },
   {
-    path: "/home",
+    path: "/home/*",
     element: <>{createElement(getRemoteModule("home/Home"))}</>,
   },
 ];

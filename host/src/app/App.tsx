@@ -22,7 +22,7 @@ const App = () => {
 };
 
 const ApplicationRoutes = () => {
-  const location = useLocation();
+  console.log("render HOST");
 
   return (
     <Routes>
@@ -38,8 +38,6 @@ const ApplicationRoutes = () => {
                   <p>Попробуйте обновить страницу.</p>
                 </div>
               )}
-              /** для сброса стейта ошибки при переходе на другие страницы через навигацию */
-              key={location.pathname}
             >
               <Suspense fallback={<>loading...</>}>{route.element}</Suspense>
             </ErrorBoundary>
