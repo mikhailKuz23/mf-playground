@@ -22,8 +22,6 @@ const App = () => {
 };
 
 const ApplicationRoutes = () => {
-  console.log("render HOST");
-
   return (
     <Routes>
       {routes.map((route) => (

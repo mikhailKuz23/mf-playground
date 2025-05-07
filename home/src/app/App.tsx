@@ -3,13 +3,6 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 
 const App = () => {
   const navigate = useNavigate();
-  console.log("render remote");
-
-  useEffect(() => {
-    return () => {
-      console.log("unmount remote");
-    };
-  }, []);
 
   return (
     <>
